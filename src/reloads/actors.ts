@@ -1,45 +1,41 @@
-export function createActor(arr: any, place: any) {
+export function createActor(item:any) {
 
-    place.innerHTML = ""
+  
 
-    for (let items of arr) {
-        const item = document.createElement('div');
-        item.classList.add('item');
+   
+        const items = document.createElement('div');
+        items.classList.add('item');
 
         const img = document.createElement('img');
-        img.src = `https://image.tmdb.org/t/p/original${items.profile_path}`
+        img.src = `https://image.tmdb.org/t/p/original${item.profile_path}`
         img.alt = "";
 
         const nameDiv = document.createElement('h3');
-        nameDiv.textContent = items.original_name;
+        nameDiv.textContent = item.original_name;
 
 
         const nameLatinDiv = document.createElement('p');
-        nameLatinDiv.textContent = items.name;
-        item.append(img, nameDiv, nameLatinDiv);
+        nameLatinDiv.textContent = item.name;
+        items.append(img, nameDiv, nameLatinDiv);
 
-        place.append(item)
-    }
+       return items
+    
 }
 
-export function createActorOther(arr: any, place: any) {
+export function createActorOther(item:any) {
 
-    place.innerHTML = ""
-
-    for (let items of arr) {
-        const item = document.createElement('div');
-        item.classList.add('item');
+        const items = document.createElement('div');
+        items.classList.add('item');
 
 
         const nameDiv = document.createElement('h3');
-        nameDiv.textContent = items.original_name;
+        nameDiv.textContent = item.original_name;
 
 
         const nameLatinDiv = document.createElement('p');
-        nameLatinDiv.textContent = items.name;
-        item.append(nameDiv, nameLatinDiv);
+        nameLatinDiv.textContent = item.name;
+        items.append(nameDiv, nameLatinDiv);
 
 
-        place.append(item)
-    }
+       return items
 }

@@ -7,11 +7,10 @@
 body {
     background-color: #181818;
     font-family: sans-serif;
-    height: fit-content;
     background-image: url('../img/Joker.png');
-    background-size: cover;
+    background-position: top;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .header {
@@ -114,34 +113,39 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 86%;
+    
+    width: 83%;
+    gap: 15px;
     margin: 0 auto;
-    padding: 40px 45px;
+    white-space: nowrap;
 
 }
 
-.main_text {
-    display: flex;
-    align-items: center;
-}
+
 
 
 
 .main_text h1 {
     font-size: 44px;
     color: white;
-    margin: 0;
+   
 }
 
 .kino {
     display: flex;
+    gap: 20px;
+
+  
 }
 
 .kino a {
     color: white;
+    justify-content: end;
     text-decoration: none;
-    margin-right: 30px;
+    text-align: center;
+    margin-left: 50px;
     font-size: 16px;
+    cursor: pointer;
 }
 
 .kino a:hover {
@@ -306,12 +310,16 @@ h1 {
 }
 .container_persons {
     display: flex;
-    width: 80%;
+    width: 83%;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     padding: 20px;
+
+    h1{
+        color: white;
+    }
 }
 
 .date {
@@ -336,8 +344,9 @@ h1 {
 .main_actor {
     display: flex;
     gap: 20px;
-    width: 70%;
+    width: 80%;
     height: 500px;
+    color: white;
 
     .item {
         padding: 20px;
@@ -371,11 +380,12 @@ h1 {
     flex-direction: column;
     width: 50%;
     height: 500px;
+    color: white;
 
     .item {
         background-color: #1B2133;
         padding: 20px;
-        border-radius: 10px;
+       border-bottom: 2px solid #242d47;
         position: relative;
     }
     .item h3 {
@@ -409,7 +419,7 @@ img {
 
 
 .container_wait {
-    background-color: #282828;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -495,7 +505,7 @@ h2 {
 
 
 .footer-container {
-    background-color: #282828;
+    background-color: #181818;
     margin: 0 auto;
     width: 100%;
     padding: 30px;
@@ -530,9 +540,7 @@ h2 {
     width: 400px;
     margin: 0 auto;
 
-    p {
-        white-space: nowrap;
-    }
+ 
 }
 
 .footer-form input {
@@ -624,4 +632,35 @@ h2 {
     color: #999;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+
+.container_treler {
+    color: white;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.head_treler {
+    font-size: 33px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20xp;
+}
+
+.name_treler {
+    font-size: 23px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.vidoe {
+    width: 100%;
+    height: 700px;
+}
+
+.kino {
+    overflow-x: auto;
+    scrollbar-width: none;
+     
 }

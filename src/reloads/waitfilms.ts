@@ -1,8 +1,8 @@
-export function createWaitfilms(arr: any, place: any) {
+export function createWaitfilms(item:any) {
 
-    place.innerHTML = ""
+
     
-    for(let item of arr) {
+  
 
         const movieCard = document.createElement('div');
         movieCard.classList.add('movie-card');
@@ -21,6 +21,6 @@ export function createWaitfilms(arr: any, place: any) {
       
         movieCard.append(img , title , release);
        
-        place.append(movieCard)
-    }
+       return movieCard
+    
   }
