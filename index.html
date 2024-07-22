@@ -5,15 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./src/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <title>Document</title>
 </head>
 
 <body>
-
-
-
-
-
   <header class="header">
     <div class="logo_main">
       <div class="logo">
@@ -50,13 +46,15 @@
       <h1>Сейчас в кино</h1>
     </div>
     <div class="kino">
-      
+
     </div>
   </div>
 
   <div class="films">
     <div class="container_films"></div>
   </div>
+
+  <div class="gradient"></div>
 
   <div class="center">
     <button class="novinki">Все новинки</button>
@@ -70,6 +68,10 @@
 
     <div class="name">
       <p class="name_treler">Форсаж 9</p>
+    </div>
+
+    <div class="other_trelers">
+
     </div>
   </div>
 
@@ -86,16 +88,19 @@
         <button>2015</button>
       </div>
     </div>
-    <div class="movie-grid">
 
-
-    </div>
-    <div class="sled">
-      <button>&lt;</button>
-      <span>4/15</span>
-      <button>&gt;</button>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </div>
+
+
 
   <div class="container_persons">
     <h1>Популярные персоны</h1>
@@ -143,7 +148,8 @@
     </div>
     <div class="footer-form">
       <h3>Подпишитесь на E-mail рассылку</h3>
-      <p>Если хотите быть в курсе последних новостей и новинок кино - заполните форму ниже и оформите бесплатную E-mail
+      <p>Если хотите быть в курсе последних новостей и новинок кино - заполните форму ниже и оформите бесплатную
+        E-mail
         рассылку!</p>
       <div class="buttons">
         <input type="email" placeholder="Введите свой E-mail адрес">

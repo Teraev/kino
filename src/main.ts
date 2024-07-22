@@ -1,76 +1,128 @@
 import { reload } from "./lib/utils"
-import { createActor, createActorOther } from "./reloads/actors"
-import { reloadFilm } from "./reloads/films"
-import { createGenre } from "./reloads/genres"
-import { createNewfilms } from "./reloads/newfilms"
-import { createWaitfilms } from "./reloads/waitfilms"
+import { getData } from "./lib/http.request"
+import { createActor, createActorOther } from "./components/actors"
+import { reloadFilm } from "./components/films"
+import { createGenre } from "./components/genres"
+import { createNewfilms } from "./components/newfilms"
+import { createWaitfilms } from "./components/waitfilms"
+import { createTrelers } from "./components/all_trelers"
 export const body = document.body
-const now_playing_films = 'https://api.themoviedb.org/3/movie/now_playing'
-const new_films = 'https://api.themoviedb.org/3/movie/popular'
-const upcoming_films = 'https://api.themoviedb.org/3/movie/upcoming'
-const actors = 'https://api.themoviedb.org/3/person/popular'
-const genre = 'https://api.themoviedb.org/3/genre/movie/list'
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules"
+
+
+const other_trelers = document.querySelector('.other_trelers')
 export const video = document.querySelector('.container_treler iframe')
 const main_actor = document.querySelector('.main_actor')
 const other_actors = document.querySelector('.other_actors')
 const place_genre = document.querySelector('.kino')
 const place_wait_films = document.querySelector('.movie-grid_wait_films')
 export const place = document.querySelector('.container_films')
-const place_new_films = document.querySelector('.movie-grid')
+
+const place_wrapper = document.querySelector('.swiper-wrapper')
+const btn_all = document.querySelector('.novinki')
 
 
-
-const conf = {
-  headers: {
-    Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NDE0MDUyYzkyYjA1YzlmNGYwZWFmZmVjZTI2NGIyNSIsIm5iZiI6MTcyMTA3OTM5My4yODY0MzIsInN1YiI6IjY2OTU5MzQ1YWZiODk5ZDgwMGU0ZjJlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rOxqFrK9X13NESM8laD0Oq9SMnvLe2P66uRPZszbGJY`
+let all = false
+btn_all.onclick = () => {
+  if (all === false) {
+    getData('/movie/now_playing')
+      .then(res => {
+        if (res.status === 200) {
+          reload(res.data.results, reloadFilm, place);
+          all = true;
+        }
+      });
+  } else {
+    getData('/movie/now_playing')
+      .then(res => {
+        if (res.status === 200) {
+          const limitednewfilms = res.data.results.slice(0, 8);
+          reload(limitednewfilms, reloadFilm, place);
+          all = false;
+        }
+      });
   }
 }
 
-
-fetch(now_playing_films, conf)
-  .then(res => res.json())
+getData('/movie/now_playing')
   .then(res => {
-    const limitedfilms = res.results.slice(0, 8);
-    reload(limitedfilms, reloadFilm, place)
+    if (res.status === 200) {
+      const limitednewfilms = res.data.results.slice(0, 8);
+      reload(limitednewfilms, reloadFilm, place);
+    }
   })
 
 
-fetch(new_films, conf)
-  .then(res => res.json())
+
+getData('/movie/popular')
   .then(res => {
-    const limitednewfilms = res.results.slice(0, 4);
-    reload(limitednewfilms, createNewfilms, place_new_films)
+    if (res.status === 200) {
+
+      reload(res.data.results, createNewfilms, place_wrapper)
+    }
+
   })
 
 
-fetch(upcoming_films, conf)
-  .then(res => res.json())
+getData('/movie/upcoming?limit=4')
   .then(res => {
-    const limitedwaitfilms = res.results.slice(0, 4);
-    reload(limitedwaitfilms, createWaitfilms, place_wait_films)
-  })
+    if (res.status === 200) {
+      const limitednewfilms = res.data.results.slice(0, 8);
+      reload(limitednewfilms, createWaitfilms, place_wait_films)
+    }
 
-fetch(actors, conf)
-  .then(res => res.json())
-  .then(res => {
-    const limitedwaitfilms = res.results.slice(0, 2);
-    reload(limitedwaitfilms, createActor, main_actor)
-  })
-
-fetch(actors, conf)
-  .then(res => res.json())
-  .then(res => {
-    const limitedwaitfilms = res.results.slice(2, 7);
-    reload(limitedwaitfilms, createActorOther, other_actors)
   })
 
 
-fetch(genre, conf)
-  .then(res => res.json())
+
+
+getData('/person/popular')
   .then(res => {
 
-    reload(res.genres, createGenre, place_genre)
+    if (res.status === 200) {
+      const limitedwaitfilms = res.data.results.slice(0, 2);
+      reload(limitedwaitfilms, createActor, main_actor)
+    }
   })
+
+getData('/person/popular')
+  .then(res => {
+    if (res.status === 200) {
+
+      reload(res.data.results, createActorOther, other_actors)
+    }
+  })
+
+
+
+getData('/genre/movie/list')
+  .then(res => {
+
+    if (res.status === 200) {
+      reload(res.data.genres, createGenre, place_genre)
+    }
+  })
+
+getData('/movie/now_playing')
+  .then(res => {
+    if (res.status === 200) {
+
+      reload(res.data.results, createTrelers, other_trelers);
+    }
+  })
+
+
+
+new Swiper(".swiper", {
+  modules: [Navigation],
+  slidesPerView: 4,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+
 
 
 

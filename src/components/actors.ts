@@ -1,8 +1,5 @@
-export function createActor(item:any) {
+export function createActor(item: any) {
 
-  
-
-   
         const items = document.createElement('div');
         items.classList.add('item');
 
@@ -13,29 +10,25 @@ export function createActor(item:any) {
         const nameDiv = document.createElement('h3');
         nameDiv.textContent = item.original_name;
 
-
         const nameLatinDiv = document.createElement('p');
         nameLatinDiv.textContent = item.name;
         items.append(img, nameDiv, nameLatinDiv);
 
-       return items
-    
+        return items
+
 }
 
-export function createActorOther(item:any) {
+export function createActorOther(item: any) {
 
         const items = document.createElement('div');
         items.classList.add('item');
 
-
         const nameDiv = document.createElement('h3');
         nameDiv.textContent = item.original_name;
-
 
         const nameLatinDiv = document.createElement('p');
         nameLatinDiv.textContent = item.name;
         items.append(nameDiv, nameLatinDiv);
 
-
-       return items
+        return items
 }

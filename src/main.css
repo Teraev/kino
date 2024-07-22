@@ -11,6 +11,7 @@ body {
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
+   
 }
 
 .header {
@@ -113,7 +114,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     width: 83%;
     gap: 15px;
     margin: 0 auto;
@@ -128,14 +129,14 @@ body {
 .main_text h1 {
     font-size: 44px;
     color: white;
-   
+
 }
 
 .kino {
     display: flex;
     gap: 20px;
 
-  
+
 }
 
 .kino a {
@@ -308,6 +309,7 @@ h1 {
     font-size: 32px;
     padding: 30px 0 20px 20px;
 }
+
 .container_persons {
     display: flex;
     width: 83%;
@@ -317,7 +319,7 @@ h1 {
     text-align: center;
     padding: 20px;
 
-    h1{
+    h1 {
         color: white;
     }
 }
@@ -325,6 +327,7 @@ h1 {
 .date {
     display: flex;
 }
+
 .period {
     color: #949494;
     font-size: 14px;
@@ -332,37 +335,41 @@ h1 {
     border: 1px solid #595959;
     border-radius: 5px;
 }
+
 .wrapper {
     display: flex;
     width: 80%;
     margin: 0 auto;
-    
+
     margin-bottom: 50px;
-    
+
 }
 
 .main_actor {
     display: flex;
     gap: 20px;
     width: 80%;
-    height: 500px;
+    height: 525px;
     color: white;
 
     .item {
-        padding: 20px;
+        width: 50%;
         border-radius: 10px;
         position: relative;
         margin-bottom: 25px;
     }
+
     .item h3 {
         font-size: 20px;
         margin-bottom: 10px;
     }
+
     .item p {
         color: #949494;
         font-size: 14px;
         margin-bottom: 10px;
     }
+
     .item .position {
         position: absolute;
         top: 10px;
@@ -381,22 +388,28 @@ h1 {
     width: 50%;
     height: 500px;
     color: white;
+    overflow: scroll;
+
 
     .item {
         background-color: #1B2133;
+        margin-left: 10px;
         padding: 20px;
-       border-bottom: 2px solid #242d47;
+        border-bottom: 2px solid #242d47;
         position: relative;
     }
+
     .item h3 {
         font-size: 20px;
         margin-bottom: 10px;
     }
+
     .item p {
         color: #949494;
         font-size: 14px;
         margin-bottom: 10px;
     }
+
     .item .position {
         position: absolute;
         top: 10px;
@@ -407,6 +420,10 @@ h1 {
         color: #ffc107;
         font-size: 12px;
     }
+}
+
+.other_actors::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -464,9 +481,9 @@ h2 {
         font-size: 30px;
     }
 
-   p {
-    font-size: 15px;
-   }
+    p {
+        font-size: 15px;
+    }
 }
 
 .movie-card img {
@@ -540,7 +557,7 @@ h2 {
     width: 400px;
     margin: 0 auto;
 
- 
+
 }
 
 .footer-form input {
@@ -639,7 +656,44 @@ h2 {
     color: white;
     width: 80%;
     margin: 0 auto;
-}
+
+    .other_trelers {
+        display: flex;
+        gap: 20px;
+       overflow: scroll;
+      
+    }
+    .other_trelers::-webkit-scrollbar {
+        display: none;
+    }
+    
+        .trailer-item {
+            padding: 20px;
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+           
+    
+            img {
+                width: 600px;
+                max-width: 320px;
+                height: 300px;
+                border-radius: 10px;
+            }
+           
+    
+            h3 {
+                font-family: Qanelas;
+                font-size: 20px;
+                font-weight: 900;
+                line-height: 25.48px;
+                color: white;
+            }
+        }
+    }
+
 
 .head_treler {
     font-size: 33px;
@@ -662,5 +716,39 @@ h2 {
 .kino {
     overflow-x: auto;
     scrollbar-width: none;
-     
+
 }
+
+.swiper {
+    color: white;
+    width: 100%;
+    height: 400px;
+}
+
+.swiper_wrapper {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide {
+   
+   display: flex;
+   justify-content: s;
+   width: 100%;
+   height: 100%;
+   font-size: 18px;
+   margin-right: 0px;
+}
+
+.swiper-slide img {
+    all: unset;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
