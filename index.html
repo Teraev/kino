@@ -35,7 +35,7 @@
     </nav>
     <div class="actions">
       <div class="search">
-        <img src="./img/search.svg" alt="">
+        <img class="poisk" src="./img/search.svg" alt="">
       </div>
       <a href="#" class="login-button">Войти</a>
     </div>
@@ -180,6 +180,22 @@
     <p class="footer-prava">2020 © Kinoarea. Все права защищены</p>
     <a href="#" class="footer-privacy">Политика конфиденциальности</a>
   </footer>
+
+
+  <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <input class="searches" type="text" placeholder="Поиск">
+      </div>
+      <div class="modal-section">
+        <h3>Фильмы</h3>
+        <div class="container_film">
+        </div>
+      </div>
+    </div>
+    <button class="close-button">×</button>
+  </div>
+  </div>
 
   <script type="module" src="./src/main.ts"></script>
 </body>

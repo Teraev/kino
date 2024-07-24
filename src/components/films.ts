@@ -34,25 +34,17 @@ export function reloadFilm(item: any) {
         if (res.status === 200) {
           const Trailer = res.data.results.find(video => video.type === 'Trailer')
           video.src = `https://www.youtube.com/embed/${Trailer.key}`;
-
+          location.assign('./pages/film_page/?id=' + item.id);
         }
       })
+      
 
-  
   }
 
-  div.onclick = () => {
-   
-   location.assign('./src/pages/film_pages/id=' + item.id)
 
-    
-      // if(!id) {
-      //   return
-      // } else {
-      //   location.assign(`/src/pages/film_page/${id}`)
-      // }
-  }
+
   div.append(img, span);
+  
   return div;
 }
 

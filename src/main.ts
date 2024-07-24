@@ -1,3 +1,4 @@
+import Swiper from "swiper";
 import { reload } from "./lib/utils"
 import { getData } from "./lib/http.request"
 import { createActor, createActorOther } from "./components/actors"
@@ -6,21 +7,25 @@ import { createGenre } from "./components/genres"
 import { createNewfilms } from "./components/newfilms"
 import { createWaitfilms } from "./components/waitfilms"
 import { createTrelers } from "./components/all_trelers"
-export const body = document.body
-import Swiper from "swiper";
 import { Navigation } from "swiper/modules"
+import { searchFilms } from "./components/create_search_films"
 
-
-const other_trelers = document.querySelector('.other_trelers')
+export const body = document.body
 export const video = document.querySelector('.container_treler iframe')
+export const place = document.querySelector('.container_films')
+
+const container_film = document.querySelector('.container_film')
+const search = document.querySelector('.searches')
+const modal = document.querySelector('#modal')
+const close = document.querySelector('.close-button')
+const other_trelers = document.querySelector('.other_trelers')
 const main_actor = document.querySelector('.main_actor')
 const other_actors = document.querySelector('.other_actors')
 const place_genre = document.querySelector('.kino')
 const place_wait_films = document.querySelector('.movie-grid_wait_films')
-export const place = document.querySelector('.container_films')
-
 const place_wrapper = document.querySelector('.swiper-wrapper')
 const btn_all = document.querySelector('.novinki')
+const poisk = document.querySelector('.poisk')
 
 
 let all = false
@@ -123,6 +128,35 @@ new Swiper(".swiper", {
   },
 });
 
+
+poisk.onclick = () => {
+  modal.style.display = "flex"
+  body.style.overflow = "hidden"
+}
+close.onclick = () => {
+  modal.style.display = "none"
+  body.style.overflow = "auto"
+}
+
+function debounce(func, timeout = 800) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+
+const debouncedLog = debounce((e) => {
+  getData(`/search/multi?query=${search.value}`)
+    .then(res => {
+      reload(res.data.results, searchFilms, container_film)
+    })
+
+}, 600);
+
+search.onkeyup = debouncedLog;
 
 
 
