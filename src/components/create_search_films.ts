@@ -13,6 +13,12 @@ raiting.classList.add('rating')
 name.textContent = item.name
 img.src = `https://image.tmdb.org/t/p/original${item.poster_path}`
 raiting.textContent = item.vote_average
+
+
+main_div.onclick = () => {
+    location.assign('./pages/film_page/?id=' + item.id);
+}
+
 content.append(name)
 main_div.append(img , content , raiting)
 

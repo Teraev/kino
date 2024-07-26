@@ -18,7 +18,6 @@ export function createSimilarFilms(item: any) {
 
    
 
-
     movie.append(img , rating , title );
     
 

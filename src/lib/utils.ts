@@ -1,3 +1,6 @@
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules"
+
 export function reload(arr:any, component:any, place:any) {
 
     place.innerHTML = ""
@@ -11,3 +14,23 @@ export function reload(arr:any, component:any, place:any) {
     }
 
 }
+
+export function setSwiper(arr = [], className = "", component, place) {
+    const swiperDiv = document.createElement("div");
+   
+    swiperDiv.classList.add(className);
+   
+     place.append(swiperDiv)
+   
+     reload(arr, component, swiperDiv)
+   
+    new Swiper(className, {
+     modules: [Navigation],
+     slidesPerView: 4,
+     spaceBetween: 23,
+     navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+     },
+    });
+   }

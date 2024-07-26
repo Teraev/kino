@@ -1,5 +1,5 @@
 import { getData } from "../lib/http.request";
-import { body, video } from "../main";
+import { backsize,  video } from "../main";
 
 
 
@@ -17,7 +17,7 @@ export function reloadFilm(item: any) {
 
   div.onmouseenter = () => {
     setTimeout(() => {
-      body.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
+      backsize.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
     }, 500);
   };
 

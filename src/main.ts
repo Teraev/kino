@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { reload } from "./lib/utils"
+import { reload, setSwiper } from "./lib/utils"
 import { getData } from "./lib/http.request"
 import { createActor, createActorOther } from "./components/actors"
 import { reloadFilm } from "./components/films"
@@ -10,10 +10,11 @@ import { createTrelers } from "./components/all_trelers"
 import { Navigation } from "swiper/modules"
 import { searchFilms } from "./components/create_search_films"
 
-export const body = document.body
+
 export const video = document.querySelector('.container_treler iframe')
 export const place = document.querySelector('.container_films')
-
+export const backsize = document.querySelector('.backsize')
+const body = document.body
 const container_film = document.querySelector('.container_film')
 const search = document.querySelector('.searches')
 const modal = document.querySelector('#modal')
@@ -23,7 +24,7 @@ const main_actor = document.querySelector('.main_actor')
 const other_actors = document.querySelector('.other_actors')
 const place_genre = document.querySelector('.kino')
 const place_wait_films = document.querySelector('.movie-grid_wait_films')
-const place_wrapper = document.querySelector('.swiper-wrapper')
+const place_wrapper = document.querySelector('.container_swiper')
 const btn_all = document.querySelector('.novinki')
 const poisk = document.querySelector('.poisk')
 
@@ -64,7 +65,7 @@ getData('/movie/popular')
   .then(res => {
     if (res.status === 200) {
 
-      reload(res.data.results, createNewfilms, place_wrapper)
+      setSwiper(res.data.results, "swiper" , reloadFilm, place_wrapper)
     }
 
   })
@@ -119,14 +120,7 @@ getData('/movie/now_playing')
 
 
 
-new Swiper(".swiper", {
-  modules: [Navigation],
-  slidesPerView: 4,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+
 
 
 poisk.onclick = () => {

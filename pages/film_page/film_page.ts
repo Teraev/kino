@@ -4,9 +4,9 @@ import { createActors } from "../../src/components/create_actors"
 import { createPoster } from "../../src/components/create_poster"
 import { createFilmImages } from "../../src/components/film_images"
 import { createSimilarFilms} from "../../src/components/similar_films"
-const body = document.body
-const img = document.querySelector('.poster')
 
+const img = document.querySelector('.poster')
+const backsize = document.querySelector('.backsize')
 const name_film = document.querySelector('.name_film')
 const description = document.querySelector('.description')
 const container_actors = document.querySelector('.container_actors')
@@ -24,7 +24,7 @@ getData(`/movie/${id}`)
     .then(res => {
         if (res.status === 200) {
 
-            body.style.background = `url(https://image.tmdb.org/t/p/original${res.data.backdrop_path})`,
+            backsize.style.background = `url(https://image.tmdb.org/t/p/original${res.data.backdrop_path})`,
                 img.src = `https://image.tmdb.org/t/p/original${res.data.poster_path}`,
                 name_film.textContent = res.data.title,
                 description.textContent = res.data.overview
