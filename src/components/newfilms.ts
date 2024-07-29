@@ -9,6 +9,8 @@ export function createNewfilms(item: any) {
   img.alt = item.title;
 
 
+ 
+
   card.append(img);
   return card
 }

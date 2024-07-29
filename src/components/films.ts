@@ -34,7 +34,7 @@ export function reloadFilm(item: any) {
         if (res.status === 200) {
           const Trailer = res.data.results.find(video => video.type === 'Trailer')
           video.src = `https://www.youtube.com/embed/${Trailer.key}`;
-          location.assign('./pages/film_page/?id=' + item.id);
+          location.assign('/pages/film_page/?id=' + item.id);
         }
       })
       

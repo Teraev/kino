@@ -15,6 +15,10 @@ export function createWaitfilms(item: any) {
         release.classList.add('movie-release');
         release.textContent = `${item.release_date} в России`;
 
+        movieCard.onclick = () => {
+                location.assign('/pages/film_page/?id=' + item.id);
+              }
+
         movieCard.append(img, title, release);
 
         return movieCard

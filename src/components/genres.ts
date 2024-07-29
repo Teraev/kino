@@ -10,7 +10,7 @@ export function createGenre(item: any) {
 
   a.innerHTML = item.name
 
-  // Set up the onclick handler
+  
   a.onclick = () => {
     getData(`/discover/movie?with_genres=${item.id}`)
       .then(res => {
@@ -21,6 +21,6 @@ export function createGenre(item: any) {
       })
   }
 
-  // Return the anchor element after setting up the onclick handler
+
   return a
 } 

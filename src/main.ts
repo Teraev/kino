@@ -1,14 +1,13 @@
-import Swiper from "swiper";
-import { reload, setSwiper } from "./lib/utils"
+
+import { reload, setSwiper , debounce } from "./lib/utils"
 import { getData } from "./lib/http.request"
 import { createActor, createActorOther } from "./components/actors"
 import { reloadFilm } from "./components/films"
 import { createGenre } from "./components/genres"
-import { createNewfilms } from "./components/newfilms"
 import { createWaitfilms } from "./components/waitfilms"
 import { createTrelers } from "./components/all_trelers"
-import { Navigation } from "swiper/modules"
 import { searchFilms } from "./components/create_search_films"
+import { Movie } from "./components/film";
 
 
 export const video = document.querySelector('.container_treler iframe')
@@ -19,12 +18,13 @@ const container_film = document.querySelector('.container_film')
 const search = document.querySelector('.searches')
 const modal = document.querySelector('#modal')
 const close = document.querySelector('.close-button')
-const other_trelers = document.querySelector('.other_trelers')
+const other_trelers = document.querySelector('.trailers')
 const main_actor = document.querySelector('.main_actor')
 const other_actors = document.querySelector('.other_actors')
 const place_genre = document.querySelector('.kino')
 const place_wait_films = document.querySelector('.movie-grid_wait_films')
-const place_wrapper = document.querySelector('.container_swiper')
+const place_wrapper = document.querySelector('.popular-playing')
+
 const btn_all = document.querySelector('.novinki')
 const poisk = document.querySelector('.poisk')
 
@@ -65,7 +65,7 @@ getData('/movie/popular')
   .then(res => {
     if (res.status === 200) {
 
-      setSwiper(res.data.results, "swiper" , reloadFilm, place_wrapper)
+      setSwiper(res.data.results, "swiper", Movie , place_wrapper);
     }
 
   })
@@ -79,9 +79,6 @@ getData('/movie/upcoming?limit=4')
     }
 
   })
-
-
-
 
 getData('/person/popular')
   .then(res => {
@@ -100,8 +97,6 @@ getData('/person/popular')
     }
   })
 
-
-
 getData('/genre/movie/list')
   .then(res => {
 
@@ -118,11 +113,6 @@ getData('/movie/now_playing')
     }
   })
 
-
-
-
-
-
 poisk.onclick = () => {
   modal.style.display = "flex"
   body.style.overflow = "hidden"
@@ -130,16 +120,6 @@ poisk.onclick = () => {
 close.onclick = () => {
   modal.style.display = "none"
   body.style.overflow = "auto"
-}
-
-function debounce(func, timeout = 800) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
 }
 
 const debouncedLog = debounce((e) => {

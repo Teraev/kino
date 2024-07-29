@@ -10,9 +10,9 @@ main_div.classList.add("modal-item_films")
 content.classList.add('content')
 raiting.classList.add('rating')
 
-name.textContent = item.name
+name.textContent = item.name || item.title
 img.src = `https://image.tmdb.org/t/p/original${item.poster_path}`
-raiting.textContent = item.vote_average
+raiting.textContent = item.vote_average.toFixed(1).toString();
 
 
 main_div.onclick = () => {

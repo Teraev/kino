@@ -1,10 +1,15 @@
 import { getData } from "../../src/lib/http.request"
-import { reload } from "../../src/lib/utils"
+import { debounce, reload } from "../../src/lib/utils"
 import { createActors } from "../../src/components/create_actors"
 import { createPoster } from "../../src/components/create_poster"
 import { createFilmImages } from "../../src/components/film_images"
-import { createSimilarFilms} from "../../src/components/similar_films"
+import { createSimilarFilms } from "../../src/components/similar_films"
+import { searchFilms } from "../../src/components/create_search_films"
 
+const poisk = document.querySelector('.poisk')
+const close = document.querySelector('.close-button')
+const container_film = document.querySelector('.container_film')
+const search = document.querySelector('.searches')
 const img = document.querySelector('.poster')
 const backsize = document.querySelector('.backsize')
 const name_film = document.querySelector('.name_film')
@@ -51,27 +56,47 @@ getData(`/movie/${id}/videos`)
 
 getData(`/movie/${id}/images`)
     .then(res => {
-        
+
         reload(res.data.posters.slice(0, 4), createPoster, poster_container)
     })
 
 
-    getData(`/movie/${id}/images`)
+getData(`/movie/${id}/images`)
     .then(res => {
-        reload(res.data.backdrops.slice(0, 6), createFilmImages , film_gallery)
+        reload(res.data.backdrops.slice(0, 6), createFilmImages, film_gallery)
     })
 
-    getData(`/movie/${id}/similar`)
+getData(`/movie/${id}/similar`)
     .then(res => {
         reload(res.data.results.slice(0, 4), createSimilarFilms, container_similar_films)
     })
 
 trailerbtn.onclick = () => {
-    container_treler.scrollIntoView({ 
-        behavior: 'smooth' 
-      });
+    container_treler.scrollIntoView({
+        behavior: 'smooth'
+    });
 }
 
 home.onclick = () => {
     location.assign('/')
 }
+
+poisk.onclick = () => {
+    modal.style.display = "flex"
+   
+  }
+  close.onclick = () => {
+    modal.style.display = "none"
+   
+  }
+  
+
+const debouncedLog = debounce((e) => {
+    getData(`/search/multi?query=${search.value}`)
+      .then(res => {
+        reload(res.data.results, searchFilms, container_film)
+      })
+  
+  }, 600);
+  
+  search.onkeyup = debouncedLog;
