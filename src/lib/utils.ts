@@ -15,7 +15,7 @@ export function reload(arr:any, component:any, place:any) {
 
 }
 
-export function setSwiper(arr = [], className = "", component, place) {
+export function setSwiper(arr = [], className = "", component:any, place:any) {
     const swiperDiv = document.createElement("div");
     const swiperWrapper = document.createElement("div");
     const next = document.createElement("button");
@@ -43,9 +43,9 @@ export function setSwiper(arr = [], className = "", component, place) {
   }
 
 
-  export function debounce(func, timeout = 800) {
-    let timer;
-    return (...args) => {
+  export function debounce(func:any, timeout = 800) {
+    let timer:any;
+    return (...args:any) => {
       clearTimeout(timer);
       timer = setTimeout(() => {
         func.apply(this, args);

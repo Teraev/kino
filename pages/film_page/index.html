@@ -6,168 +6,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./media.css">
 </head>
 
 <body>
 
     <div class="backsize"></div>
 
-    <header class="header">
-        <div class="logo_main">
-            <div class="logo">
-                <img src="/img/kino.svg" alt="Kinoarea Logo">
-                <h1 class="home">Kinoarea</h1>
+    <div class="containers">
+        <header class="header">
+            <div class="logo_main">
+                <div class="logo">
+                    <img src="/img/kino.svg" alt="Kinoarea Logo">
+                    <h1 class="home">Kinoarea</h1>
+                </div>
+                <div class="application">
+                    <img src="/img/vk.svg" alt="">
+                    <img src="/img/instagram.svg" alt="">
+                    <img src="/img/facebook.svg" alt="">
+                    <img src="/img/twitter.svg" alt="">
+                </div>
             </div>
-            <div class="application">
-                <img src="/img/vk.svg" alt="">
+    
+            <nav class="nav">
+                <a href="#">Афиша</a>
+                <a href="#">Медиа</a>
+                <a href="#">Фильмы</a>
+                <a href="#">Актеры</a>
+                <a href="#">Новости</a>
+                <a href="#">Подборки</a>
+                <a href="#">Категории</a>
+            </nav>
+            <div class="actions">
+                <div class="search">
+                    <img class="poisk" src="/img/search.svg" alt="">
+                </div>
+                <a href="#" class="login-button">Войти</a>
+            </div>
+        </header>
+    
+    
+    
+    
+    
+        <div class="container">
+            <div class="film-card">
+                <img class="poster" src="" alt="">
+                <div class="film-details">
+    
+                    <h2 class="name_film">Escape from Pretoria</h2>
+                    <div class="info">
+                        <p class="description">
+    
+                        </p>
+                    </div>
+    
+    
+                    <button class="trailer-button">Смотреть трейлер</button>
+                    <div class="social-links">
+                        <img src="/img/facebook.svg" alt="">
+                        <img src="/img/instagram.svg" alt="">
+                        <img src="/img/twitter.svg" alt="">
+                        <img src="/img/vk.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="actors">
+            <div class="container_actor">
+                <h1>В главных ролях:</h1>
+                <a href="#">Все актёры →</a>
+            </div>
+            <div class="container_actors">
+    
+            </div>
+    
+        </div>
+    
+        <div class="container_treler">
+            <div class="head_treler">
+                <p>Новые трелеры</p>
+            </div>
+            <iframe class="vidoe" src="" frameborder="0"></iframe>
+    
+            <div class="name">
+                <p class="name_treler">Форсаж 9</p>
+            </div>
+    
+    
+        </div>
+    
+        <div class="container_poster">
+            <h1>Постеры к фильму</h1>
+            <a href="#" class="all-posters">Все постеры</a>
+        </div>
+        <div class="poster-container">
+    
+        </div>
+    
+    
+        <section class="film_images">
+            <h1>Кадры из фильма</h1>
+            <div class="film_gallery"></div>
+        </section>
+    
+        <h1 class="similar_films">Похожие фильмы</h1>
+        <div class="container_filmi"></div>
+    
+    
+        <footer class="footer-container">
+            <div class="footer-logo">
+                <div class="names_footer">
+                    <img src="/img/kino.svg" alt="Kinoarea Logo">
+                    <p>Kinoarea</p>
+                </div>
+            </div>
+            <div class="footer-form">
+                <h3>Подпишитесь на E-mail рассылку</h3>
+                <p>Если хотите быть в курсе последних новостей и новинок кино - заполните форму ниже и оформите бесплатную
+                    E-mail
+                    рассылку!</p>
+                <div class="buttons">
+                    <input type="email" placeholder="Введите свой E-mail адрес">
+                    <button>Подписаться</button>
+                </div>
+                <div class="footer-checkbox">
+                    <input type="checkbox">
+                    <p>
+                        Соглашаюсь на условия
+                    </p>
+                    <a href="#">политики конфиденциальности</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#">Афиша</a>
+                <a href="#">Новости</a>
+                <a href="#">Персоны</a>
+                <a href="#">Рейтинги</a>
+                <a href="#">Рецензии</a>
+                <a href="#">Каталог фильмов</a>
+            </div>
+            <div class="footer-social">
                 <img src="/img/instagram.svg" alt="">
                 <img src="/img/facebook.svg" alt="">
+                <img src="/img/vk.svg" alt="">
                 <img src="/img/twitter.svg" alt="">
             </div>
-        </div>
-
-        <nav class="nav">
-            <a href="#">Афиша</a>
-            <a href="#">Медиа</a>
-            <a href="#">Фильмы</a>
-            <a href="#">Актеры</a>
-            <a href="#">Новости</a>
-            <a href="#">Подборки</a>
-            <a href="#">Категории</a>
-        </nav>
-        <div class="actions">
-            <div class="search">
-                <img class="poisk" src="/img/search.svg" alt="">
-            </div>
-            <a href="#" class="login-button">Войти</a>
-        </div>
-    </header>
-
-
-
-
-
-    <div class="container">
-        <div class="film-card">
-            <img class="poster" src="" alt="">
-            <div class="film-details">
-
-                <h2 class="name_film">Escape from Pretoria</h2>
-                <div class="info">
-                    <p class="description">
-
-                    </p>
+            <p class="footer-prava">2020 © Kinoarea. Все права защищены</p>
+            <a href="#" class="footer-privacy">Политика конфиденциальности</a>
+        </footer>
+    
+    
+        <div class="modal-overlay" id="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <input class="searches" type="text" placeholder="Поиск">
                 </div>
-
-
-                <button class="trailer-button">Смотреть трейлер</button>
-                <div class="social-links">
-                    <img src="/img/facebook.svg" alt="">
-                    <img src="/img/instagram.svg" alt="">
-                    <img src="/img/twitter.svg" alt="">
-                    <img src="/img/vk.svg" alt="">
+                <div class="modal-section">
+                    <h3>Фильмы</h3>
+                    <div class="container_film">
+                    </div>
                 </div>
             </div>
+            <button class="close-button">×</button>
         </div>
-    </div>
-
-    <div class="actors">
-        <div class="container_actor">
-            <h1>В главных ролях:</h1>
-            <a href="#">Все актёры →</a>
-        </div>
-        <div class="container_actors">
-
-        </div>
-
-    </div>
-
-    <div class="container_treler">
-        <div class="head_treler">
-            <p>Новые трелеры</p>
-        </div>
-        <iframe class="vidoe" src="" frameborder="0"></iframe>
-
-        <div class="name">
-            <p class="name_treler">Форсаж 9</p>
-        </div>
-
-
-    </div>
-
-    <div class="container_poster">
-        <h1>Постеры к фильму</h1>
-        <a href="#" class="all-posters">Все постеры</a>
-    </div>
-    <div class="poster-container">
-
-    </div>
-
-
-    <section class="film_images">
-        <h1>Кадры из фильма</h1>
-        <div class="film_gallery"></div>
-    </section>
-
-    <h1 class="similar_films">Похожие фильмы</h1>
-    <div class="container_filmi"></div>
-
-
-    <footer class="footer-container">
-        <div class="footer-logo">
-            <div class="names_footer">
-                <img src="/img/kino.svg" alt="Kinoarea Logo">
-                <p>Kinoarea</p>
-            </div>
-        </div>
-        <div class="footer-form">
-            <h3>Подпишитесь на E-mail рассылку</h3>
-            <p>Если хотите быть в курсе последних новостей и новинок кино - заполните форму ниже и оформите бесплатную
-                E-mail
-                рассылку!</p>
-            <div class="buttons">
-                <input type="email" placeholder="Введите свой E-mail адрес">
-                <button>Подписаться</button>
-            </div>
-            <div class="footer-checkbox">
-                <input type="checkbox">
-                <p>
-                    Соглашаюсь на условия
-                </p>
-                <a href="#">политики конфиденциальности</a>
-            </div>
-        </div>
-        <div class="footer-links">
-            <a href="#">Афиша</a>
-            <a href="#">Новости</a>
-            <a href="#">Персоны</a>
-            <a href="#">Рейтинги</a>
-            <a href="#">Рецензии</a>
-            <a href="#">Каталог фильмов</a>
-        </div>
-        <div class="footer-social">
-            <img src="/img/instagram.svg" alt="">
-            <img src="/img/facebook.svg" alt="">
-            <img src="/img/vk.svg" alt="">
-            <img src="/img/twitter.svg" alt="">
-        </div>
-        <p class="footer-prava">2020 © Kinoarea. Все права защищены</p>
-        <a href="#" class="footer-privacy">Политика конфиденциальности</a>
-    </footer>
-
-
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <input class="searches" type="text" placeholder="Поиск">
-            </div>
-            <div class="modal-section">
-                <h3>Фильмы</h3>
-                <div class="container_film">
-                </div>
-            </div>
-        </div>
-        <button class="close-button">×</button>
     </div>
 
     <script type="module" src="./film_page.ts"></script>

@@ -1,7 +1,18 @@
 import { getData } from "../lib/http.request";
 import { video } from "../main";
 
-export function createTrelers(item: any) {
+interface MovieItem {
+  id: number;
+  title: string;
+  poster_path: string;
+}
+
+interface Video {
+  key: string;
+  type: string;
+}
+
+export function createTrailers(item: MovieItem): HTMLDivElement {
   const movieCard = document.createElement('div');
   movieCard.classList.add('trelers');
 
@@ -19,16 +30,15 @@ export function createTrelers(item: any) {
     getData(`/movie/${item.id}/videos`)
       .then(res => {
         if (res.status === 200) {
-          const Trailer = res.data.results.find(video => video.type === 'Trailer')
-          video.src = `https://www.youtube.com/embed/${Trailer.key}`;
-
+          const Trailer = res.data.results.find((video: Video) => video.type === 'Trailer');
+          if (Trailer) {
+            video.src = `https://www.youtube.com/embed/${Trailer.key}`;
+          }
         }
       })
+    const tralerName = document.getElementById('tralerName') as HTMLElement;
     tralerName.innerText = item.title;
   }
 
-
-  return movieCard
+  return movieCard;
 }
-
-

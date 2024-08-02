@@ -1,3 +1,6 @@
+import { getData } from "../lib/http.request";
+import { backsize, video } from "../main";
+
 export function createSimilarFilms(item: any) {
     const movie = document.createElement('div');
     movie.classList.add('movie');
@@ -22,6 +25,19 @@ export function createSimilarFilms(item: any) {
 
     movie.append(img , rating , title );
     
+    movie.onmouseenter = () => {
+      setTimeout(() => {
+        if (backsize) {
+          backsize.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`;
+        }
+      }, 500);
+    };
+
+    getData(`/movie/${item.id}/videos`).then((res: any) => {
+      if (res.status === 200 && res.data.results.length > 0) {
+        video.src = `https://www.youtube.com/embed/${res.data.results[0].key}`;
+      }
+    });
 
     return movie
 }

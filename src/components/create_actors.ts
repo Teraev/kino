@@ -15,6 +15,9 @@ export function createActors(item: any) {
     actorRole.textContent = item.character;
 
 
+    actorCard.onclick = () => {
+        location.assign(`/pages/actor_page/?id=${item.id}`)
+    }
 
     actorCard.append(actorimg, actorName, actorRole);
 
