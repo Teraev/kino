@@ -5,7 +5,7 @@ import { createGenre } from "./components/genres"
 import { createTrailers } from "./components/all_trelers";
 import { searchFilms } from "./components/create_search_films";
 import { createSimilarFilms } from "./components/similar_films"
-import { Movie } from "./components/swiper";
+
 
 
 
@@ -28,7 +28,7 @@ const main_actor: HTMLElementOrNull = document.querySelector('.main_actor');
 const other_actors: HTMLElementOrNull = document.querySelector('.other_actors');
 const place_genre: HTMLElementOrNull = document.querySelector('.kino');
 const place_wait_films: HTMLElementOrNull = document.querySelector('.movie-grid_wait_films');
-const place_wrapper = document.querySelector('.popular-playing') as HTMLElement;
+
 
 const btn_all: HTMLElementOrNull = document.querySelector('.novinki');
 const poisk: HTMLElementOrNull = document.querySelector('.poisk');
@@ -134,6 +134,7 @@ if (close) {
 }
 
 const debouncedLog: EventListener = debounce((e: any) => {
+  e.preventDefault()
   if (search) {
     getData(`/search/multi?query=${search.value}`).then((res: any) => {
       reload(res.data.results, searchFilms, container_film);

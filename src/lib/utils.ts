@@ -45,13 +45,12 @@ export function setSwiper(arr = [], className = "", component:any, place:any) {
   });
 }
 
-
 export function debounce(func: any, timeout = 800) {
   let timer: any;
   return (...args: any) => {
     clearTimeout(timer);
     timer = setTimeout(() => {
-      func.apply(this, args);
+      func(...args);
     }, timeout);
   };
 }
