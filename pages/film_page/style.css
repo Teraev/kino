@@ -323,8 +323,8 @@ h1 {
 
 .poster-container {
     display: flex;
-    width: 85%;
-    gap: 20px;
+    width: 81%;
+    gap: 25px;
     margin: 0 auto;
     justify-content: space-between;
     margin-top: 20px;
@@ -586,7 +586,16 @@ h1 {
 
 }
 
+.modal-item_films {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #1e2637;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
 
+}
 
 
 .modal-content {

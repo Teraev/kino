@@ -193,10 +193,10 @@
     }
 
     .movie img {
-        max-width: 100%; 
-        max-height: 700px; 
-        width: auto; 
-        height: auto; 
+        max-width: 100%;
+        max-height: 700px;
+        width: auto;
+        height: auto;
         object-fit: cover;
     }
 }
@@ -213,9 +213,9 @@
         margin: 0 auto;
     }
 
-  .poster {
-    width: 330px;
-  }
+    .poster {
+        width: 330px;
+    }
 
     .poster img {
         width: 330px;
@@ -242,7 +242,7 @@
     .vidoe {
         margin-top: 20px;
         width: 99%;
-        
+
         height: 500px;
     }
 
@@ -258,8 +258,8 @@
 
     .poster-container {
         display: grid;
-        grid-template-columns: repeat(2 , 1fr);
-      
+        grid-template-columns: repeat(2, 1fr);
+
         width: 100%;
         gap: 30px;
 
@@ -308,7 +308,7 @@
         color: white;
         margin: 0 auto;
         margin-top: 20px;
-       
+
     }
 
     .container_filmi {
@@ -324,10 +324,10 @@
     }
 
     .movie img {
-        max-width: 100%; 
-        max-height: 700px; 
-        width: auto; 
-        height: auto; 
+        max-width: 100%;
+        max-height: 700px;
+        width: auto;
+        height: auto;
         object-fit: cover;
     }
 }
@@ -340,7 +340,7 @@
 
     .container {
         max-width: 100%;
-       
+
     }
 
     .poster {
@@ -349,7 +349,7 @@
         max-height: 400px;
         object-fit: contain;
     }
-    
+
     .film-card {
         display: flex;
         align-items: flex-start;
@@ -360,10 +360,15 @@
     .info {
         margin-top: 50px;
     }
+    
+.poster {
+    
+    height: 250px;
+}
 
     .poster img {
-        width: 150px;
-        height: 400px;
+        width: 100%;
+
         object-fit: contain;
         border-radius: 15px;
     }
@@ -401,7 +406,8 @@
 
     .poster-container {
         display: flex;
-        width: 105%;
+        width: 100%;
+        margin: 0 auto;
         gap: 1px;
 
     }
@@ -449,7 +455,7 @@
         color: white;
         margin: 0 auto;
         margin-top: 20px;
-       
+
     }
 
     .container_filmi {
@@ -465,10 +471,225 @@
     }
 
     .movie img {
-        max-width: 100%; 
-        max-height: 700px; 
-        width: auto; 
-        height: auto; 
+        max-width: 100%;
+        max-height: 700px;
+        width: auto;
+        height: auto;
         object-fit: cover;
     }
+
+    .movie .rating {
+        position: absolute;
+        color: white;
+        top: 10px;
+        right: 5px;
+        background-color: rgba(0, 255, 0, 10);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+    }
 }
+
+
+@media (max-width:576px) {
+    .containers {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+
+
+    .header {
+        width: 250px;
+        color: white;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .logo_main {
+        width: 85%;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .logo h1 {
+        margin-left: 5px;
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .logo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .application {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .application img {
+
+        margin: 0 10px;
+        height: 20px;
+
+    }
+
+    .nav {
+        display: none;
+        margin: 0 auto;
+        overflow: auto;
+
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 16px;
+    }
+
+    .actions {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin-top: 30px;
+    }
+
+    .search img {
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .login-button {
+        margin-left: 20px;
+        padding: 10px 20px;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+        background-color: #005bb5;
+    }
+
+    .film-card {
+        width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+
+    }
+
+    .poster {
+        width: 350px;
+        height: auto;
+    }
+
+    .poster img {
+        width: 330px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+
+    .container_actors {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container_treler {
+        color: white;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .vidoe {
+        width: 100%;
+        height: 200px;
+    }
+
+    .container_poster {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .poster-container {
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        overflow: auto;
+        gap: 1px;
+    }
+
+    .film_images {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .similar_films {
+        width: 95%;
+        font-size: 30px;
+        color: white;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+
+    .container_filmi {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 30px;
+        gap: 20px;
+        justify-content: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .footer-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+   
+
+    .footer-links {
+        width: 95%;
+        margin: 0 auto;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+    

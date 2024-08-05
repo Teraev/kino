@@ -286,23 +286,7 @@ h2 {
 }
 
 
-.sled {
-    display: flex;
-    margin-top: 20px;
 
-    span {
-        color: white;
-    }
-}
-
-.sled button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 18px;
-    margin: 0 10px;
-    cursor: pointer;
-}
 
 .head_new_film {
     width: 100%;
@@ -311,6 +295,8 @@ h2 {
     color: white;
 
 }
+
+
 
 .year-filter {
     display: flex;
@@ -538,19 +524,7 @@ h2 {
     color: #999;
 }
 
-.sled {
-    display: flex;
-    margin-top: 20px;
-}
 
-.sled button {
-    background-color: transparent;
-    border: none;
-    color: #999;
-    font-size: 18px;
-    margin: 0 10px;
-    cursor: pointer;
-}
 
 
 
@@ -715,30 +689,7 @@ h2 {
 
 
 
-.swiper_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    
-}
-
-
-.swiper-slide {
-    display: flex;
-    width: 100%;
-    height: auto;
-    font-size: 18px;
-    margin-right: 0px;
-
-    margin: 10px;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
 
 .modal-overlay {
     position: fixed;
@@ -886,7 +837,7 @@ h2 {
 .trailers {
     display: flex;
     width: 100%;
-
+    gap: 20px;
 }
 
 
@@ -896,74 +847,81 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    padding: 10px;
+    position: relative;
     box-sizing: border-box;
     border-radius: 10px;
-    gap: 20px;
-    height: 100%;
+    gap: 5px;
 
+    .play {
+        position: absolute;
+        bottom: 50%;
+        right: 45%;
+        width: 40px;
+        cursor: pointer;
+    }
 
 
     img {
-
-        width: 360px;
-        height: 380px;
-        background-size: contain;
-
-        background-position: center;
+        margin-top: 20px;
+        width: 350px;
+        height: auto;
+        object-fit: contain;
         border-radius: 10px;
     }
 }
 
 
-.swiper-button-next,
-.swiper-button-prev {
-    background-color: rgba(255, 255, 255, 0);
-    color: #fff;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
+
+
+
+
+
+.container_new_film {
+    width: 83%;
+    overflow: hidden;
 }
 
 
-.popular-playing {
+.popular_playing {
     display: flex;
-    justify-content: space-between;
-
-    .movie_cards {
-        cursor: pointer;
-        max-width: 600px;
-       
+    gap: 33px 23px;
+}
 
 
-        &:hover {
-            transform: scale(1.05);
-        }
+.swiper-wrapper {
+    width: 100%;
+    
+    .movie {
+        width: 100%;
+        border-radius: 10px;
+        position: relative;
+        transition: transform 0.3s ease;
+    }
 
-        .movie_poster {
-            border-radius: 10px;
-           width: 100%;
-           
-            height: 500px;
-           
+    img {
+        width: 280px;
+        max-width: 550px;
+        height: auto;
+        object-fit: contain;
+    }
 
-        }
+    .movie .rating {
+        position: absolute;
+        top: 10px;
+        right: 55px;
+        text-align: center;
+        background-color: rgba(0, 255, 0, 0.8);
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+        width: 40px;
+        transform-origin: top right;
     }
 }
 
-.swiper-wrapper {
-    display: flex;
-    gap: 60px;
-}
 
-
-.movie {    
+.movie {
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -984,14 +942,14 @@ h2 {
 .movie .rating {
     position: absolute;
     top: 10px;
-    right: 15px; 
+    right: 15px;
     text-align: center;
     background-color: rgba(0, 255, 0, 0.8);
-    padding: 5px ;
+    padding: 5px;
     border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
-   width: 40px;
+    width: 40px;
     transform-origin: top right;
 }
 
@@ -999,9 +957,9 @@ h2 {
     font-size: 25px;
     color: white;
     font-weight: bold;
-    white-space: nowrap;  
-    overflow: hidden;    
-    text-overflow: ellipsis;  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .movie .description {

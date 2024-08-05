@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/src/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="/src/media.css">
   <title>Document</title>
 </head>
@@ -95,10 +95,11 @@
           <button>2015</button>
         </div>
       </div>
-
-
-      <div class="swiper-wrapper popular-playing"></div>
-
+      <div class="swiper">
+        <div class="swiper-wrapper popular-playing">
+        
+        </div>
+      </div>
 
     </div>
 
@@ -129,7 +130,7 @@
     <div class="container_wait">
       <div class="head_wait">
         <h2>Ожидаемые новинки</h2>
-        
+
       </div>
       <div class="movie-grid_wait_films">
         <div class="swiper-wrapper wait-playing"></div>
@@ -199,6 +200,7 @@
 
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

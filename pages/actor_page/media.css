@@ -185,7 +185,7 @@
 
     .film_images {
         width: 100%;
-
+   
         margin-top: 100px;
 
         h1 {
@@ -193,17 +193,23 @@
         }
 
         .film_gallery {
-
+        
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
 
-            row-gap: 0px;
+            row-gap: 10px;
             column-gap: 10px;
 
 
         }
     }
 
+    .poster img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+    }
 
 
 }
@@ -231,11 +237,22 @@
 
     }
 
-   
+    .filem .rating {
+        position: absolute;
+        color: white;
+        top: 10px;
+        right: 5px;
+        background-color: rgba(0, 255, 0, 10);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 700;
+    }
 
     .filem img {
-        max-width: 100px;
-        height: 200px;
+        width:100px;
+        max-width: 500px;
+        height: auto;
         object-fit: contain;
         border-radius: 15px;
 
@@ -262,9 +279,9 @@
     }
 
     .film_images {
-        width:100%;
-    margin-top: 0;
-        
+        width: 100%;
+        margin-top: 0;
+
 
         h1 {
             margin: 0;
@@ -281,4 +298,227 @@
 
         }
     }
+}
+
+
+@media (max-width:576px) {
+    .container_actotr {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+
+
+
+    .header {
+        width: 250px;
+        color: white;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .logo_main {
+        width: 85%;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .logo h1 {
+        margin-left: 5px;
+        font-size: 24px;
+        padding: 0;
+    }
+
+    .logo {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .application {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+    }
+
+    .application img {
+
+        margin: 0 10px;
+        height: 20px;
+
+    }
+
+    .nav {
+        display: none;
+        margin: 0 auto;
+        overflow: auto;
+
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 8px;
+        font-size: 16px;
+    }
+
+    .actions {
+        position: absolute;
+        display: flex;
+
+        justify-content: space-between;
+        width: 75%;
+
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+
+
+
+    .search img {
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .login-button {
+        padding: 10px 20px;
+        background-color: #0066cc;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    .login-button:hover {
+        background-color: #005bb5;
+    }
+
+    .main_actor {
+        width: 100%;
+        margin: 0 auto;
+
+
+    }
+
+    .photos img {
+        max-width: 600px;
+        height: 400px;
+        object-fit: contain;
+    }
+
+
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .best_films {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .container_films {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filem {
+        width: 500px;
+        height: auto;
+        overflow: unset;
+    }
+
+
+    .film_container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        gap: 20px;
+        overflow: auto;
+    }
+
+
+
+    .filem img {
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+
+
+
+
+    .all {
+        display: none;
+    }
+
+
+
+
+
+    .poster {
+        width: 200px;
+        height: 300px;
+        object-fit: contain;
+    }
+
+    .film_images {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 100px;
+
+        h1 {
+            margin-left: 20px;
+        }
+
+        .film_gallery {
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            row-gap: 10px;
+            column-gap: 10px;
+            height: fit-content;
+
+        }
+    }
+
+    .footer-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+
+    .footer-links {
+        width: 95%;
+        margin: 0 auto;
+        overflow: auto;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
 }

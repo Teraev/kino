@@ -12,6 +12,10 @@ export function createActor(item: any) {
 
         const nameLatinDiv = document.createElement('p');
         nameLatinDiv.textContent = item.name;
+
+        items.onclick = () => {
+                location.assign(`/pages/actor_page/?id=${item.id}` )
+        }
         items.append(img, nameDiv, nameLatinDiv);
 
         return items
@@ -28,6 +32,10 @@ export function createActorOther(item: any) {
 
         const nameLatinDiv = document.createElement('p');
         nameLatinDiv.textContent = item.name;
+
+        items.onclick = () => {
+                location.assign(`/pages/actor_page/?id=${item.id}` )
+        }
         items.append(nameDiv, nameLatinDiv);
 
         return items

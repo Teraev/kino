@@ -23,7 +23,7 @@ const container_similar_films: HTMLElement | null = document.querySelector('.con
 const trailerbtn: HTMLElement | null = document.querySelector('.trailer-button');
 const container_treler: HTMLElement | null = document.querySelector('.container_treler');
 const home: HTMLElement | null = document.querySelector('.home');
-const modal: HTMLElement | null = document.querySelector('#modal'); // Assuming modal element is present
+const modal: HTMLElement | null = document.querySelector('#modal'); 
 
 let id: string | null = location.search.split('=').at(-1);
 

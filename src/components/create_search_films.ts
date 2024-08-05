@@ -12,7 +12,7 @@ raiting.classList.add('rating')
 
 name.textContent = item.name || item.title
 img.src = `https://image.tmdb.org/t/p/original${item.poster_path}`
-raiting.textContent = item.vote_average.toFixed(1).toString();
+raiting.textContent = item.vote_average.toFixed(1)
 
 
 main_div.onclick = () => {
