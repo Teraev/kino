@@ -835,7 +835,7 @@
     }
 
     .header {
-         width: 250px;
+         width: 240px;
         color: white;
         padding: 0px;
         display: flex;
@@ -901,7 +901,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
+        width: 70%;
         margin-top: 30px;
     }
 
@@ -911,7 +911,6 @@
     }
 
     .login-button {
-        margin-left: 20px;
         padding: 10px 20px;
         background-color: #0066cc;
         color: white;
@@ -1105,12 +1104,13 @@
 
     .main_actor {
         width: 95%;
+        height:400px;
         margin: 0 auto;
     }
 
     .main_actor img {
         width: 100%;
-      height: 350px;
+      height: auto;
         object-fit: contain;
     }
 
